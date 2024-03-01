@@ -1,6 +1,6 @@
 # Community Garden
 
-This repository requires and has been tested on Ruby v3.2.2 and is based on Rails 7.0.6.
+This repository requires and has been tested on Ruby v3.2.2 and is based on Rails 7.1.2.
 
 RSpec and Shoulda-Matchers have been installed and set up.
 
@@ -40,13 +40,14 @@ When you run `bundle exec rspec` you should have 2 passing tests.
 
 * No visual styling is required or expected
 * You do not need to test for or create any model validations.
+* You are not required too use advanced routing syntax. Any syntax is fine. 
 
 
 ## Overview
 
 Community Garden is an app that tracks Gardens, Plots, and Plants.
 
-* Gardens have a name and an 'organic' column
+* Gardens have a name and an 'organic' boolean column
   * Ex: `name: "Turing Community Garden", organic: true`
 * Plots have a number, size, and a direction
  	* Ex: `number: 25, size: "Large", direction: "East"`
