@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_08_04_210423) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_06_142032) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "gardens", force: :cascade do |t|
     t.string "name"
     t.boolean "organic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "days_to_harvest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
