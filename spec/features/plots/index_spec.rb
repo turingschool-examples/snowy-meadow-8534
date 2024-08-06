@@ -29,15 +29,27 @@ RSpec.describe "Plots Index Page" do
       visit plots_path
       
       # I see a list of all plot numbers
-      within "#plots" do
-        @plots.each do |plot|
-          within "#plot_id-#{plot.id}" do
-          expect(page).to have_content(plot.number)
-          
-          # And under each plot number I see the names of all that plot's plants
-          expect(page).to have_content(plot.plants.name)
-          end
-        end
+      within("#plot-#{@plot_1.id}") do
+        expect(page).to have_content(@plot_1.number)
+        expect(page).to have_content(@plant_1.name)
+        expect(page).to have_content(@plant_2.name)
+        expect(page).to have_content(@plant_3.name)
+      end
+
+      within("#plot-#{@plot_2.id}") do
+        expect(page).to have_content(@plot_2.number)
+        expect(page).to have_content(@plant_4.name)
+        expect(page).to have_content(@plant_5.name)
+      end
+
+      within("#plot-#{@plot_3.id}") do
+        expect(page).to have_content(@plot_3.number)
+        expect(page).to have_content(@plant_6.name)
+      end
+
+      within("#plot-#{@plot_4.id}") do
+        expect(page).to have_content(@plot_4.number)
+        expect(page).to have_content(@plant_7.name)
       end
     end
   end

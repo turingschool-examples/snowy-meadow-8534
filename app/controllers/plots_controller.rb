@@ -1,5 +1,6 @@
 class PlotsController < ApplicationController
   def index
-    @plots = Plot.all
+    @plots = Plot.includes(:plants).all
+
   end
 end
