@@ -5,7 +5,9 @@
       <p>Plants:</p>
         <% plot.plants.each do |plant| %>
           <div id="plant-<%= plant.id %>">
-            <li><%= plant.name %></li>
+            <%= plant.name %>
+            <!-- I cannot figure out how to pass the info I need to the controller -->
+            <%= button_to "Remove Plant", plant_plot_path(plant_plot.id), method: :delete %>
           </div>
         <% end %>
     </div>

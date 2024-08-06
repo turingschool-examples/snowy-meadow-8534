@@ -67,7 +67,6 @@ RSpec.describe "Plots Index Page" do
 
       # When I visit the plots index page
       visit plots_path
-      save_and_open_page
 
       # Next to each plant's name
       # I see a button to remove that plant from that plot
