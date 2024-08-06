@@ -4,6 +4,7 @@ class CreatePlants < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :description
       t.integer :days_to_harvest
+      t.references :garden, null: false, foreign_key: true
 
       t.timestamps
     end

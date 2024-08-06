@@ -34,8 +34,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_06_142239) do
     t.string "name"
     t.string "description"
     t.integer "days_to_harvest"
+    t.bigint "garden_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_plants_on_garden_id"
   end
 
   create_table "plots", force: :cascade do |t|
@@ -50,5 +52,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_06_142239) do
 
   add_foreign_key "plant_plots", "plants"
   add_foreign_key "plant_plots", "plots"
+  add_foreign_key "plants", "gardens"
   add_foreign_key "plots", "gardens"
 end
