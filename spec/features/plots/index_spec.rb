@@ -19,7 +19,7 @@ RSpec.describe "Plots Index Page" do
     PlantPlot.create!(plant: @plant_1, plot: @plot_1)
     PlantPlot.create!(plant: @plant_2, plot: @plot_1)
     PlantPlot.create!(plant: @plant_3, plot: @plot_1)
-    PlantPlot.create!(plant: @plant_8, plot: @plot_1)
+    PlantPlot.create!(plant: @plant_2, plot: @plot_2)
     PlantPlot.create!(plant: @plant_4, plot: @plot_2)
     PlantPlot.create!(plant: @plant_5, plot: @plot_2)
     PlantPlot.create!(plant: @plant_6, plot: @plot_3)
@@ -67,6 +67,7 @@ RSpec.describe "Plots Index Page" do
 
       # When I visit the plots index page
       visit plots_path
+      save_and_open_page
 
       # Next to each plant's name
       # I see a button to remove that plant from that plot
